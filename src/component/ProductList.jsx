@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { ApiiContext } from '../context/Apicontext';
 
 const ProductList = () => {
-    const {dataShow} =React.useContext(ApiiContext);
+    const {dataShow} =useContext(ApiiContext);
     const { token } = useSelector((state) => state.token);
     const {code,handleDepot,divisionCode,DepotCode} = useContext(ApiiContext)
     const [list,setList]= useState("")
