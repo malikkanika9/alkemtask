@@ -1,5 +1,5 @@
 import { BEARER, LOGOUT, TOKEN  } from "./Action";
-const init = {token:{},
+const init = {token:"",
     bearer_data:""
 }
 export const reducer = (store=init, { type, payload }) => {

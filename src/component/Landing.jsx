@@ -6,9 +6,9 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { logger2, logoutAction } from "../Redux/Action";
 import Button from 'react-bootstrap/Button';
-import { Product } from "./Product";
-import { Division } from "./Division";
-import { Depot } from "./Depot";
+import Product from "./Distributor";
+import Divisionn from "./Divisionn";
+import Depot from "./Depot";
 
 export const Landing = () => {
     
@@ -27,7 +27,8 @@ export const Landing = () => {
         <>
             <Button style={{justifyContent:"right", marginLeft:"1300px", backgroundColor:"#4b6cb7 " }} onClick={logout}>logout</Button> 
           <h1>Welcome to Landing Page</h1>
-         <Product/> <Division/> <Depot/>
+         <Product/> 
+         <Divisionn/> <Depot/>
         </>
     )
 }
