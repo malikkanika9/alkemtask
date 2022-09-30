@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useEffect } from 'react';
 import { DataContext } from '../../Contexts/DataContext'
 import axios from 'axios';
 import {  useSelector } from "react-redux";
 import { useState } from 'react';
-import { ApiiContext } from "../context/Apicontext";
+import { ApiiContext } from '../context/Apicontext';
 
 const ProductList = () => {
-    const {dataShow} =React.useContext(DataContext);
+    const {dataShow} =React.useContext(ApiiContext);
     const { token } = useSelector((state) => state.token);
     const {code,handleDepot,divisionCode,DepotCode} = useContext(ApiiContext)
     const [list,setList]= useState("")
@@ -19,14 +19,12 @@ const ProductList = () => {
           { headers: { Authorization: `bearer ${token}` } }
         )
         .then((res) => {
-          // console.log(res.data.data);
-          setList(res.data.data)
+        setList(res.data.data)
         })
         .catch((error) => {
           console.log(error);
         });
     }
-    // console.log('list',list)
     useEffect(()=>{
         fetchData()
     },[dataShow,DepotCode])

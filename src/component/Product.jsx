@@ -1,23 +1,24 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import Depot from "./Depot";
-import Division from "./Divisionn";
-import { ApiiContext } from "../context/Apicontext";
+import { DataContext } from "../../Contexts/DataContext";
+import Modaldepot from "../../share/From/Modaldepot";
+import Modaldistributor from "../../share/From/Modal_Distributor";
+import Modaldivision from "../../share/From/Modal_division";
 import ProductList from "./ProductList";
 
 const Product = () => {
-  const { dataShow } = useContext(ApiiContext);
+  const { dataShow } = React.useContext(DataContext);
   return (
     <div className="m-2">
       <Row>
         <Col lg={4} sm={4}>
-          <Depot />
+          <Modaldistributor />
         </Col>
         <Col lg={4} sm={4}>
-          <Division />
+          <Modaldivision />
         </Col>
         <Col lg={4} sm={4}>
-          <Depot />
+          <Modaldepot />
         </Col>
       </Row>
       <Row>
